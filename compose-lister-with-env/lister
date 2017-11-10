@@ -1,0 +1,8 @@
+#! /usr/bin/env sh
+
+echo Here are the contents of the working directory inside the container:
+ls
+echo
+
+echo Here are the environmental variables inside the container:
+env
