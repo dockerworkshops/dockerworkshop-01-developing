@@ -1,0 +1,4 @@
+#! /usr/bin/env sh
+
+echo hello world! From inside a docker container!
+echo The version of NodeJS running in this container is: `node --version`

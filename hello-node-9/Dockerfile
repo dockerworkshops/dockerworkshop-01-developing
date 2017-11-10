@@ -1,0 +1,8 @@
+FROM node:9-alpine
+
+RUN mkdir app
+WORKDIR app
+
+ADD . .
+
+CMD ["./hello-node-9"]
