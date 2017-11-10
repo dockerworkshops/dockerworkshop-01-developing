@@ -1,0 +1,6 @@
+version: "2"
+
+services:
+
+  lister:
+    image: dockerworkshops/lister:1.0.0
