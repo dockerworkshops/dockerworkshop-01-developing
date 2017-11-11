@@ -1,0 +1,46 @@
+version: "2"
+
+services:
+
+  slack-api:
+    image: databraiddb/slack-api:latest
+    command: sh -c "sleep 5 && npm run dev"
+    ports:
+      - 8000:8000
+    environment:
+      - PORT=8000
+    depends_on:
+      - postgres
+    volumes:
+      - ./google-credentials:/app/google-credentials
+      - ./.env.slack-api:/app/.env
+
+  transit-api:
+    image: databraiddb/transit-api:latest
+    ports:
+      - 8001:8000
+    environment:
+      - PORT=8000
+    volumes:
+      - ./.env.transit-api:/app/.env
+
+  sheet-api:
+    image: databraiddb/sheet-api:latest
+    ports:
+      - 8003:8000
+    environment:
+      - PORT=8000
+    volumes:
+      - ./.env.sheet-api:/app/.env
+
+  github-api:
+    image: databraiddb/github-api:latest
+    ports:
+      - 8002:8000
+    environment:
+      - PORT=8000
+    volumes:
+      - ./.env.github-api:/app/.env
+
+  postgres:
+    image: databraiddb/slack-test-postgres:latest

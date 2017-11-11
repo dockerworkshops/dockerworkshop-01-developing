@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should render the App component with props as specified  1`] = `
+<div
+  className="page-container"
+>
+  <div
+    className="side-strip"
+    onClick={[Function]}
+    role="link"
+    tabIndex="-1"
+  >
+    <Icon
+      as="i"
+      name="chevron right"
+    />
+  </div>
+  <div
+    className="grid-container"
+  >
+    <SidebarPushable
+      as={[Function]}
+    >
+      <Sidebar
+        animation="overlay"
+        as={[Function]}
+        direction="right"
+        icon="labeled"
+        inverted={true}
+        vertical={true}
+        visible={true}
+        width="thin"
+      >
+        <MenuItem
+          name="add_widget"
+          onClick={[Function]}
+        >
+          <Icon
+            as="i"
+            name="add circle"
+          />
+          Add Widget
+        </MenuItem>
+        <MenuItem
+          name="lock-unlock-dashboard"
+          onClick={[Function]}
+        >
+          <Icon
+            as="i"
+            name="lock"
+          />
+          Lock
+        </MenuItem>
+        <MenuItem
+          disabled={true}
+          name="settings"
+        >
+          <Icon
+            as="i"
+            name="setting"
+          />
+          Settings
+        </MenuItem>
+      </Sidebar>
+      <SidebarPusher>
+        <Segment
+          basic={true}
+        >
+          <_class
+            className="layout"
+            cols={12}
+            layout={
+              Array [
+                Object {
+                  "h": 8,
+                  "i": "slack",
+                  "static": true,
+                  "w": 6,
+                  "x": 0,
+                  "y": 8,
+                },
+              ]
+            }
+            margin={
+              Array [
+                2,
+                2,
+              ]
+            }
+            measureBeforeMount={false}
+            onLayoutChange={[Function]}
+            rowHeight={30}
+            verticalCompact={false}
+            width={1200}
+          >
+            <div
+              className="widget-container"
+            >
+              <Connect(WidgetContainer)
+                id="github"
+              />
+            </div>
+          </_class>
+        </Segment>
+      </SidebarPusher>
+    </SidebarPushable>
+  </div>
+  <Connect(Component) />
+</div>
+`;

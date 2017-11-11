@@ -1,0 +1,55 @@
+{
+  "name": "dashboard-spa",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@databraid/github-widget": "^1.0.23",
+    "@databraid/sheets-widget": "^1.0.5",
+    "@databraid/slack-widget": "^1.0.24",
+    "@databraid/transit-widget": "^1.0.26",
+    "localforage": "1.5.0",
+    "prop-types": "15.5.10",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "react-grid-layout": "0.14.7",
+    "react-redux": "5.0.6",
+    "redux": "3.7.2",
+    "redux-persist": "4.9.1",
+    "redux-thunk": "2.2.0",
+    "semantic-ui-react": "0.71.4"
+  },
+  "devDependencies": {
+    "enzyme": "2.9.1",
+    "enzyme-to-json": "1.5.1",
+    "eslint": "4.3.0",
+    "eslint-config-airbnb": "15.1.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "7.1.0",
+    "react-addons-test-utils": "15.6.0",
+    "react-scripts": "1.0.10",
+    "redux-mock-store": "1.2.3",
+    "redux-testkit": "1.0.6",
+    "react-test-renderer": "15.6.1"
+  },
+  "scripts": {
+    "down": "scripts/down",
+    "up": "scripts/up",
+    "start": "npm run up && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "node_modules/eslint/bin/eslint.js --ext=js --ext=jsx --fix ."
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/databraid-dashboard/databraid-react-starter.git"
+  },
+  "author": "joshwyatt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/databraid-dashboard/databraid-react-starter/issues"
+  }
+}
