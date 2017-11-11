@@ -1,8 +1,19 @@
 #! /usr/bin/env sh
 
+echo The current working directory is:
+echo
+pwd
+echo
+echo ------------------------------------
+
 echo Here are the contents of the working directory inside the container:
+echo
 ls
 echo
+echo ------------------------------------
 
 echo Here are the environmental variables inside the container:
+echo
 env
+echo
+echo ------------------------------------
