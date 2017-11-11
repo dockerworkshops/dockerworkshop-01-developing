@@ -1,0 +1,40 @@
+version: "2.1"
+
+services:
+
+  api:
+    build: .
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      dev_postgres:
+        condition: service_healthy
+      test_postgres:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=docker_dev
+      - DEV_DB_HOST=dev_postgres
+      - TEST_DB_HOST=test_postgres
+
+  dev_postgres:
+    image: postgres:9.6.3-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+    environment:
+      - POSTGRES_DB=users_with_secrets
+
+  test_postgres:
+    image: postgres:9.6.3-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+    environment:
+      - POSTGRES_DB=users_with_secrets

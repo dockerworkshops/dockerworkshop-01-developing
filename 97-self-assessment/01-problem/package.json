@@ -1,0 +1,31 @@
+{
+  "name": "jwt_lesson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "body-parser": "1.17.2",
+    "dotenv": "4.0.0",
+    "express": "4.15.3",
+    "jsonwebtoken": "7.4.1",
+    "knex": "0.13.0",
+    "nodemon": "1.11.0",
+    "pg": "6.2.4"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "mocha": "4.0.1",
+    "supertest": "3.0.0"
+  },
+  "scripts": {
+    "test": "NODE_ENV=docker_test && npm run seed-db && mocha",
+    "docker-test": "echo Make docker-test work",
+    "start": "nodemon index.js",
+    "seed-db": "npm run knex migrate:rollback && npm run knex migrate:latest && npm run knex seed:run",
+    "knex": "knex",
+    "mocha": "mocha"
+  },
+  "author": "joshwyatt",
+  "license": "MIT"
+}
