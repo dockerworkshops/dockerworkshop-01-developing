@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+
+  ping:
+    build: .
+    command: pong
+
+  pong:
+    build: .
+    command: bing
+
+  bing:
+    build: .
+    command: bong
+
+  bong:
+    build: .
+    command: ping
+
