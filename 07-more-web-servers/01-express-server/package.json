@@ -1,0 +1,16 @@
+{
+  "name": "01-express-server-image",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "joshwyatt",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.16.2",
+    "nodemon": "1.12.1"
+  }
+}
