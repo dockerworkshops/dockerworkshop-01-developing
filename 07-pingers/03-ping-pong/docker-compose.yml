@@ -8,4 +8,4 @@ services:
 
   pong:
     build: .
-    command: bing
+    command: ping
