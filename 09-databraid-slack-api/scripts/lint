@@ -1,0 +1,6 @@
+#! /usr/bin/env sh
+
+# This script is intended to be run from the HOST
+# environment, and therefore uses `docker-compose exec`
+
+docker-compose exec api node_modules/eslint/bin/eslint.js --fix .

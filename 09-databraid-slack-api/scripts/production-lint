@@ -1,0 +1,6 @@
+#! /usr/bin/env sh
+
+# This script is run as the default command INSIDE the container
+# and therfore does not need to issue commands via `docker-compose`
+
+./node_modules/eslint/bin/eslint.js .

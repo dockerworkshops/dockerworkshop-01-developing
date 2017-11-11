@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+
+  api:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "sleep 6 && npm run dev"
+    ports:
+      - 8001:8001
+    environment:
+      - NODE_ENV=docker_dev
+      - PORT=8001
+    depends_on:
+      - postgres
+
+  postgres:
+    image: databraiddb/slack-test-postgres:latest

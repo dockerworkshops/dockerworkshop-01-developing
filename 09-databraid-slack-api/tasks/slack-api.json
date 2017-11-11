@@ -1,0 +1,27 @@
+{
+  "taskRoleArn": "arn:aws:iam::116138389191:role/slack-api",
+  "containerDefinitions": [
+    {
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "containerPort": 8000,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "name": "slack-api",
+      "image": "databraiddb/slack-api:latest",
+      "cpu": 10,
+      "command": ["npm", "start"],
+      "environment" : [
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        }
+      ]
+    }
+  ],
+  "family": "slack-api"
+}
