@@ -19,7 +19,8 @@
     "supertest": "3.0.0"
   },
   "scripts": {
-    "test": "NODE_ENV=docker_test && npm run seed-db && mocha",
+    "test": "npm run seed-db && mocha",
+    "docker-test": "NODE_ENV=docker_test docker-compose exec api npm test",
     "start": "nodemon index.js",
     "seed-db": "npm run knex migrate:rollback && npm run knex migrate:latest && npm run knex seed:run",
     "knex": "knex",
