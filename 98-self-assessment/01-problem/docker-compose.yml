@@ -1,10 +1,17 @@
 version: "2.1"
 
-# The api application needs to be provided with 2 environmental variables
-# in order for it to run for development, and for it to run tests on an
-# isolated testing database:
-#   - DEV_DB_HOST
-#   - TEST_DB_HOST
+# This `docker-compose.yml` needs completing.
+#
+# Specifically, the `api` service it defines is expecting two
+# environmental variables that it has not yet been provided:
+#
+#   - `DEV_DB_HOST`
+#   - `TEST_DB_HOST`
+#
+# Your task is to provide these 2 environmental variables
+# to the `api` service, and, to give them values
+# that will allow the containerized `api` service to connect
+# to the `dev-db` and `test-db` services respectively.
 
 services:
 
@@ -23,7 +30,7 @@ services:
     environment:
       - NODE_ENV=docker_dev
 
-  dev_postgres:
+  dev_db:
     image: postgres:9.6.3-alpine
     healthcheck:
       test: ["CMD-SHELL", "pg_isready"]
@@ -33,7 +40,7 @@ services:
     environment:
       - POSTGRES_DB=users_with_secrets
 
-  test_postgres:
+  test_db:
     image: postgres:9.6.3-alpine
     healthcheck:
       test: ["CMD-SHELL", "pg_isready"]
