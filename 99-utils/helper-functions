@@ -2,15 +2,17 @@
 dkrm () {
   docker rm -f $(docker ps -a -q)
 }
-
+# Force stop and most recent container
 dkrmone () {
   docker rm -f $(docker ps -a -q | head -n 1)
 }
 
+# Remove all images containing `none`
 dkrmi () {
   docker rmi -f `docker images | grep none | awk '{ print $3 }'`
 }
 
+# If you need to reuse the old `docker-machine`
 dkunset() {
   unset DOCKER_TLS_VERIFY
   unset DOCKER_CERT_PATH
@@ -18,10 +20,12 @@ dkunset() {
   unset DOCKER_HOST
 }
 
+# Log the most recently run(ing) container
 dkl() {
   docker logs `docker ps -aq | head -n 1`
 }
 
+# Follow the logs for the most recently run(ing) container
 dklf() {
   docker logs -f `docker ps -aq | head -n 1`
 }
